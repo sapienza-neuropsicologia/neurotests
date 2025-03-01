@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizio di Neuropsicologia</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo">
+                <img src="cherubino.svg" alt="Sapienza University Logo">
+            </div>
+            <div class="site-title">
+                <h2>Servizio di Neuropsicologia</h2>
+                <h3>Dipartimento di Psicologia</h3>
+            </div>
+        </div>
+    </header>
+
+    <div class="entry-container">
+        <h1>Piattaforma per test neuropsicologici</h1>
+        <p>Prima di accedere alla nostra piattaforma, ti preghiamo di leggere e accettare i nostri Termini di Servizio.
+        </p>
+
+        <div class="terms-box">
+            <h3>Termini di Servizio</h3>
+            <p>Ultimo aggiornamento: 1 Marzo 2025</p>
+
+            <h4>1. Accettazione dei Termini</h4>
+            <p>Accedendo e utilizzando questo sito web, accetti e concordi di essere vincolato dai termini e dalle
+                disposizioni del presente accordo. Inoltre, quando utilizzi i servizi particolari di questo sito web,
+                sarai soggetto a tutte le linee guida o regole applicabili a tali servizi.</p>
+
+            <h4>2. Contenuto</h4>
+            <p>Tutti i contenuti forniti su questo sito e le applicazioni disponibili sono solo a scopo didattico e di
+                ricerca scientifica.
+                Il proprietario del sito è il <a href="https://neuropsicologia.web.uniroma1.it/servizio">Servizio di
+                    Neuropsicologia</a> del <a href="https://dippsi.web.uniroma1.it">Dipartimento di Psicologia</a> di
+                <a href="https://www.uniroma1.it">Sapienza Università di Roma</a>,
+                il cui responsabile scientifico è il prof. <a href="mailto:gaspare.galati@uniroma1.it">Gaspare
+                    Galati</a>.
+                Il proprietario non garantisce l'accuratezza o la completezza di qualsiasi informazione su questo sito o
+                trovata seguendo qualsiasi collegamento su questo sito.</p>
+
+            <h4>3. Privacy Policy</h4>
+            <p>L'accesso a questa piattaforma avviene in forma completamente anonima. Possono essere richieste
+                all'utente delle informazioni
+                generiche come età, sesso e livello di istruzione, non sufficienti comunque ad identificare l'utente.
+                Durante l'uso della piattaforma,
+                l'utente può scegliere di eseguire delle prove computerizzate i cui esiti possono essere indicativi del
+                suo stato di salute
+                (ad esempio, capacità di memoria, tempi di reazione, ragionamento, ecc.). Tali esiti verranno
+                memorizzati e conservati in forma anonima,
+                per finalità didattiche nei corsi di laurea, laurea magistrale, dottorato e specializzazione
+                esclusivamente destinati a psicologi e psicologi in formazione,
+                e per finalità di ricerca scientifica. I dati raccolti non verranno mai ceduti a terzi, se non
+                nell'ambito di pubblicazioni scientifiche
+                ad accesso aperto. I dati raccolti non verranno mai utilizzati per finalità commerciali o pubblicitarie.
+                I dati raccolti
+                potranno essere utilizzati per analisi statistiche, ma in forma aggregata.</p>
+            <p>
+                Nessuno dei dati raccolti né nessuna possibile elaborazione a partire da essi permette di identificare
+                in alcun modo l'utente.
+                Ad esempio, non raccogliamo dati che possano far risalire alla posizione geografica dell'utente e non
+                utilizziamo cookie.
+                Pertanto, la conservazione e la successiva elaborazione di tali dati non rientra nell'ambito di
+                applicazione delle leggi sulla tutela dei dati personali.
+
+            <h4>4. Limitazione di Responsabilità</h4>
+            <p>Utilizzando questa piattaforma, l'utente si dichiara consapevole che i dati raccolti possono essere
+                indicativi
+                dello stato di salute cognitiva e psicologica della persona, ma che vengono raccolti per esclusivi fini
+                didattici e scientifici
+                ed in forma completamente anonima, per cui, anche qualora i dati raccolti potessero far sospettare la
+                presenza di
+                condizioni di interesse clinico, non sarà possibile ottenere alcun responso o diagnosi. L'utente si
+                dichiara consapevole che
+                l'uso di questa piattaforma non sostituisce in alcun modo la consulenza di un professionista della
+                salute mentale e che
+                in caso di preoccupazioni o dubbi sulla propria salute mentale è necessario rivolgersi ad un
+                professionista della salute mentale.
+                Il Servizio di Neuropsicologia è disponibile ad offrire consulenze e valutazioni prenotando una visita
+                tramite l'indirizzo email
+                <a href="mailto:servizio.neuropsicologia@uniroma1.it">servizio.neuropsicologia@uniroma1.it</a>.
+                Il Servizio di Neuropsicologia non sarà comunque responsabile per eventuali danni derivanti dall'uso,
+                dall'impossibilità di utilizzare o dai risultati dell'uso di questa piattaforma.
+            </p>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="accept-terms" onchange="toggleButton()">
+            <label for="accept-terms">Ho letto e accetto i Termini di Servizio</label>
+        </div>
+
+        <button id="continue-btn" class="btn" disabled>Accedi al Test</button>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>© Servizio di Neuropsicologia - Dipartimento di Psicologia - Sapienza Università di Roma - Via degli
+                Apuli 9, 00185 Roma</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleButton() {
+            const checkbox = document.getElementById('accept-terms');
+            const button = document.getElementById('continue-btn');
+
+            if (checkbox.checked) {
+                button.classList.add('active');
+                button.disabled = false;
+            } else {
+                button.classList.remove('active');
+                button.disabled = true;
+            }
+        }
+
+        document.getElementById('continue-btn').addEventListener('click', function () {
+            window.location.href = 'main.html';
+        });
+    </script>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // For security, check if the redirect URL refers to a local html page
+        function isValidRedirect(url) {
+            var pattern = /^[a-zA-Z0-9_-]+$/;
+            return pattern.test(url);
+        }
+
+        // Get the 'redirect' parameter from URL
+        var redirectPage = getUrlParameter('code');
+        if (!redirectPage || !isValidRedirect(redirectPage))
+            redirectPage = '';
+        else
+            redirectPage = 'instructions/' + redirectPage + '.html';
+
+        function toggleButton() {
+            const checkbox = document.getElementById('accept-terms');
+            const button = document.getElementById('continue-btn');
+
+            if (checkbox.checked) {
+                button.classList.add('active');
+                button.disabled = false;
+            } else {
+                button.classList.remove('active');
+                button.disabled = true;
+            }
+        }
+
+        document.getElementById('continue-btn').addEventListener('click', function () {
+            window.location.href = redirectPage;
+        });
+    </script>
+</body>
+
+</html>
