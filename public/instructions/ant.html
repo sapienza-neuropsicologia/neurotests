@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizio di Neuropsicologia</title>
+    <link href="../styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <style type="text/css">
+        .fix-point {
+            text-align: center;
+        }
+
+        .fix-point>img {
+            width: 100%;
+            height: 40px;
+            object-fit: none;
+        }
+
+        .example-img {
+            text-align: center;
+        }
+
+        .example-img>img {
+            width: 100%;
+            height: 40px;
+            object-fit: none;
+            object-position: 50% 0%;
+        }
+    </style>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo">
+                <img src="../cherubino.svg" alt="Sapienza University Logo">
+            </div>
+            <div class="site-title">
+                <h2>Servizio di Neuropsicologia</h2>
+                <h3>Dipartimento di Psicologia</h3>
+            </div>
+        </div>
+    </header>
+
+    <div class="entry-container">
+        <h1>Attention Network Test (ANT)</h1>
+        <p>Questo test fornisce una stima dell'efficienza di tre componenti chiave dell'attenzione:
+            l'allerta, l'orientamento e il controllo esecutivo.</p>
+        <p>Il compito che dovrai fare è molto semplice. Al centro dello schermo vedrai una croce e
+            dovrai mantenere sempre lo sguardo fisso su di essa:
+        </p>
+        <p class="fix-point"><img src="../test/ant/stim/fix.png" /></p>
+        <p>Durante il test, appariranno brevemente, nella parte <u>alta</u> o <u>bassa</u> dello schermo, delle
+            configurazioni di cinque immagini come questa:
+        </p>
+        <p class="example-img"><img src="../test/ant/stim/incongLeft.png" /></p>
+        <p>L'immagine centrale sarà sempre una freccia che punta verso sinistra o verso destra. Intorno
+            ci possono essere altre frecce, come nel caso precedente, o quadrati, come in questo caso:
+        </p>
+        <p class="example-img"><img src="../test/ant/stim/neutralRight.png" /></p>
+        <p>Le figure intorno a quella centrale sono irrilevanti e le devi ignorare. Devi concentrarti solo sulla freccia
+            centrale e premere <u>il più velocemente possibile</u>il tasto corrispondente alla direzione in cui punta:
+        </p>
+        <ul>
+            <li>se la freccia centrale punta verso sinistra, premi il tasto &larr;</li>
+            <li>se la freccia centrale punta verso destra, premi il tasto &rarr;</li>
+        </ul>
+        <p>Questo è tutto ciò che devi fare! Rimani il più possibile concentrato per non sbagliare ed essere il più
+            veloce possibile.</p>
+        <h2>Segnale di preavviso</h2>
+        <p>Immediatamente prima che appaia la configurazione di immagini, spesso, ma non sempre, potrebbero apparire
+            per un breve momento uno o due quadrati, che ti avvisano che le immagini stanno per apparire:</p>
+        <ul>
+            <li>se il quadrato appare in alto, significa che le immagini appariranno in alto;</li>
+            <li>se il quadrato appare in basso, significa che le immagini appariranno in basso;</li>
+            <li>se appaino due quadrati, uno in alto e uno in basso, oppure un quadrato
+                al centro dello schermo, non saprai dove appariranno le immagini ma comunque saprai che stanno per
+                apparire;</li>
+            <li>a volte però potrebbe non apparire alcun quadrato.</li>
+        </ul>
+        <p>Il segnale di preavviso è comunque irrilevante per il compito che devi svolgere. Devi sempre concentrarti
+            sulla freccia centrale e ignorare tutto il resto.
+        </p>
+        <h3>Pronto?</h3>
+        <p>Assicurati di aver ben compreso le istruzioni prima di continuare, e se hai bisogno di ulteriori chiarimenti
+            chiedi al personale che ti assiste.
+        </p>
+        <p>Il test comincia con alcune prove di allenamento in cui il computer ti dirà se hai risposto correttamente o
+            meno.
+            Poi passerai al test vero e proprio, durante il quale non riceverai più alcun feedback sulle tue risposte.
+        </p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="accept-terms" onchange="toggleButton()">
+            <label for="accept-terms">Ho letto e compreso le istruzioni</label>
+        </div>
+
+        <button id="continue-btn" class="btn">Comincia il Test</button>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>© Servizio di Neuropsicologia - Dipartimento di Psicologia - Sapienza Università di Roma - Via degli
+                Apuli 9, 00185 Roma</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleButton() {
+            const checkbox = document.getElementById('accept-terms');
+            const button = document.getElementById('continue-btn');
+
+            if (checkbox.checked) {
+                button.classList.add('active');
+                button.disabled = false;
+            } else {
+                button.classList.remove('active');
+                button.disabled = true;
+            }
+        }
+
+        document.getElementById('continue-btn').addEventListener('click', function () {
+            window.location.href = '../test/ant';
+        });
+    </script>
+</body>
+
+</html>
