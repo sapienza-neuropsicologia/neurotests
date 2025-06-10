@@ -96,20 +96,27 @@
           });
 
           const payload = {
-            timestamp: new Date().toISOString(),
+            experiment_id: 'nback',
             participant_id: Math.random().toString(36).substr(2, 9),
-            accuracy_forme: accuracy['forme'],
-            accuracy_numeri: accuracy['numeri'],
-            accuracy_posizione: accuracy['posizione'],
-            accuracy_suoni: accuracy['suoni']
+            run_id: Math.random().toString(36).substr(2, 9),
+            format: 'json',
+            apiKey: '88e3ee34-a61b-4915-9387-14a4f25322f7',
+            data: {
+              accuracy_forme: accuracy['forme'],
+              accuracy_numeri: accuracy['numeri'],
+              accuracy_posizione: accuracy['posizione'],
+              accuracy_suoni: accuracy['suoni'],
+              data
+            }
           };
 
-          const scriptURL = "https://script.google.com/macros/s/AKfycbyF5GRvSUbaSqlluRb93aaeW-49MjnUoWJGn5ISPjBiBCwdMUD-q-m0-FstLe0LIVD-/exec"; // <--- Sostituisci qui
+          const scriptURL = "https://script.google.com/macros/s/AKfycbw9PvWllaMK7-Oab8mwlRKnAQTY_i3aFrPhbDU64db6CFgiuAC3Fa-b0u8NZ9FmArIOVA/exec"; // <--- Sostituisci qui
 
           fetch(scriptURL, {
             method: "POST",
+            redirect: "follow",
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'text/plain;charset=utf-8'
             },
             body: JSON.stringify(payload)
           });
